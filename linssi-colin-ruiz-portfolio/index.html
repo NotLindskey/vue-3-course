@@ -12,16 +12,7 @@
   </head>
   <body>
     <div :style="[darkModeSet ? darkMode : '', base]">
-      <header>
-        <h1>{{name}}'s Portfolio</h1>
-        <nav>
-          <ul>
-            <li v-for="link in links" :key="link.id">
-              <a :href="link.url">{{link.name}}</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <app-header></app-header>
       <!-- {{ name.length > 0 ? "Welcome " + name : "Welcome Guest!" }} -->
       <main>
         <!-- {{darkModeSet}} -->

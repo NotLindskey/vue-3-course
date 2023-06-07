@@ -32,14 +32,12 @@ const links = [
   { id: 3, name: "contact me", url: "contact.html" },
 ];
 
-Vue.createApp({
+const app = Vue.createApp({
   created() {
     // this.getPosts();
   },
   data() {
     return {
-      name: "Linssi Colin Ruiz",
-      links,
       posts,
       darkModeSet: false,
       darkMode: {
@@ -57,8 +55,29 @@ Vue.createApp({
     },
     async getPosts() {
       // let response = await fetch("https://jsonplaceholder.typicode.com/posts");
-      let data = await response.json();
-      console.log(data);
+      // let data = await response.json();
+      // console.log(data);
     },
   },
-}).mount("body");
+});
+
+app.component("app-header", {
+  data() {
+    return {
+      name: "Linssi Colin Ruiz",
+      links,
+    };
+  },
+  template: `<header>
+        <h1>{{name}}'s Portfolio</h1>
+        <nav>
+          <ul>
+            <li v-for="link in links" :key="link.id">
+              <a :href="link.url">{{link.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </header>`,
+});
+
+app.mount("body");
