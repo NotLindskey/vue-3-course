@@ -1,7 +1,7 @@
 const posts = [
         {
           id: 1,
-          title: "I am learning vue",
+          title: "Why I learned Vue",
           body: `I'm baby chambray street art thundercats occupy four loko
                 church-key disrupt. Shaman neutra bushwick chicharrones, tousled
                 air plant lomo williamsburg. Listicle aesthetic whatever prism,
@@ -12,7 +12,7 @@ const posts = [
         },
         {
           id: 2,
-          title: "why I am learning vue",
+          title: "Using the Vue CDN",
           body: `I'm baby chambray street art thundercats occupy four loko
                 church-key disrupt. Shaman neutra bushwick chicharrones, tousled
                 air plant lomo williamsburg. Listicle aesthetic whatever prism,
