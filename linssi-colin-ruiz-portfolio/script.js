@@ -34,11 +34,17 @@ const posts = [
   },
 ];
 
+const links = [
+  { id: 1, name: "home", url: "index.html" },
+  { id: 2, name: "portfolio", url: "portfolio.html" },
+  { id: 3, name: "contact me", url: "contact.html" },
+];
+
 Vue.createApp({
   data() {
     return {
       name: "Linssi Colin Ruiz",
-      links: ["home", "portfolio", "contact me"],
+      links,
       posts,
       darkModeSet: true,
       darkMode: {
@@ -46,8 +52,8 @@ Vue.createApp({
         color: "whitesmoke",
       },
       base: {
-        fontFamily: "monospace"
-      }
+        fontFamily: "monospace",
+      },
     };
   },
 }).mount("body");
