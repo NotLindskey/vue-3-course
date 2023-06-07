@@ -56,4 +56,9 @@ Vue.createApp({
       },
     };
   },
+  methods: {
+    toggleMode() {
+      this.darkModeSet = !this.darkModeSet;
+    },
+  },
 }).mount("body");
