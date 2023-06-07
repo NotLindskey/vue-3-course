@@ -32,7 +32,41 @@ const links = [
   { id: 3, name: "contact me", url: "contact.html" },
 ];
 
+const appHeader = {
+  data() {
+    return {
+      name: "Linssi Colin Ruiz",
+      links,
+    };
+  },
+  template: `<header>
+        <h1>{{name}}'s Portfolio</h1>
+        <nav>
+          <ul>
+            <li v-for="link in links" :key="link.id">
+              <a :href="link.url">{{link.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      `,
+};
+
+const blogPost = {
+  props: ["post"],
+  template: `
+            <article>
+              <h3>{{post.title}}</h3>
+              <p v-html="post.body"></p>
+              <p class="read_more">Read More</p>
+            </article>`,
+};
+
 const app = Vue.createApp({
+  components: {
+    "blog-post": blogPost,
+    "app-header": appHeader,
+  },
   created() {
     // this.getPosts();
   },
@@ -59,25 +93,6 @@ const app = Vue.createApp({
       // console.log(data);
     },
   },
-});
-
-app.component("app-header", {
-  data() {
-    return {
-      name: "Linssi Colin Ruiz",
-      links,
-    };
-  },
-  template: `<header>
-        <h1>{{name}}'s Portfolio</h1>
-        <nav>
-          <ul>
-            <li v-for="link in links" :key="link.id">
-              <a :href="link.url">{{link.name}}</a>
-            </li>
-          </ul>
-        </nav>
-      </header>`,
 });
 
 app.mount("body");
