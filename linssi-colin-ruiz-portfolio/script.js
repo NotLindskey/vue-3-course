@@ -46,7 +46,7 @@ Vue.createApp({
       name: "Linssi Colin Ruiz",
       links,
       posts,
-      darkModeSet: true,
+      darkModeSet: false,
       darkMode: {
         background: "#38383a",
         color: "whitesmoke",

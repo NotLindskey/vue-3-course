@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div :style="[darkMode, base]">
+    <div :style="[darkModeSet ? darkMode : '', base]">
       <header>
         <h1>{{name}}'s Portfolio</h1>
         <nav>
@@ -22,8 +22,13 @@
           </ul>
         </nav>
       </header>
+      <!-- {{ name.length > 0 ? "Welcome " + name : "Welcome Guest!" }} -->
       <main>
+        <!-- {{darkModeSet}} -->
         <div class="blog_wrapper">
+          <button @click="darkModeSet = !darkModeSet">
+            {{ darkModeSet ? '&#9788;' : '&#9789;'}}
+          </button>
           <!-- BLOG SECTION -->
           <section id="blog">
             <article v-for="post in posts" :key="post.id">
